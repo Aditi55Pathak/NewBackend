@@ -4,7 +4,6 @@ from .auth.init import auth
 from .models import db
 
 
-
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "#1*6j!a&a3i8$d##p!!"
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///dblogs.db"
