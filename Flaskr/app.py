@@ -1,8 +1,9 @@
-from flask import Flask, render_template, redirect, url_for, flash
+from flask import Flask, render_template, redirect, url_for, flash,current_app
 from flask_sqlalchemy import SQLAlchemy
-from auth.init import auth
-from models import db
-import capture
+from .auth.init import auth
+from .models import db
+
+
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "#1*6j!a&a3i8$d##p!!"
@@ -27,7 +28,7 @@ def home():
 
 # Registering the auth blueprint
 app.register_blueprint(auth, url_prefix='/auth')
-app.register_blueprint(capture.capture_blueprint)
+
 
 if __name__ == "__main__":
     app.run(debug=True)
